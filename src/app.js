@@ -15,7 +15,6 @@ export default class App extends Component {
 
   render () {
     const {dragging, sources} = this.state
-    debugger
 
     return <main
       className={dragging ? 'dragging' : ''}
