@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Convert HTML/SVG text to React JSON as defined by https://github.com/gorangajic/react-render-to-json",
   "main": "dist/index.js",
+  "bin": {
+    "html2react-json": "./bin/html2react-json.js"
+  },
   "scripts": {
     "test": "npm run test:lint && npm run test:typecheck && npm run test:unit",
     "build": "sagui build",
@@ -13,7 +16,8 @@
     "test:lint": "sagui lint",
     "test:typecheck": "sagui typecheck",
     "test:unit": "cross-env NODE_ENV=test sagui test",
-    "test:unit:watch": "npm run test:unit -- --watch"
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "prepublish": "sagui dist"
   },
   "repository": {
     "type": "git",
@@ -40,7 +44,9 @@
   },
   "dependencies": {
     "html2react": "^1.0.2",
-    "react-render-to-json": "^0.0.5"
+    "jsdom": "^9.8.3",
+    "react-render-to-json": "^0.0.5",
+    "sagui": "7.4.0"
   },
   "peerDependencies": {
     "react": "^15.4.1"
